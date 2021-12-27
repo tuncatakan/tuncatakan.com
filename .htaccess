@@ -1,0 +1,19 @@
+# Custom ---------------------------------------------------------------
+
+# ----------------------------------------------------------------------
+# Default index.php redirect
+# ----------------------------------------------------------------------
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+

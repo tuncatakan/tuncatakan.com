@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url>
+	<loc>http://www.tuncatakan.com</loc>
+	<lastmod>2021-03-15</lastmod>
+	<changefreq>Weekly</changefreq>
+	<priority>1.0</priority>
+	<image:image>
+	<image:loc>http://www.tuncatakan.com/img/tunc_profile.jpg</image:loc>
+	<image:title>tunc_profile</image:title>
+	</image:image>
+	<video:video>
+	<video:content_loc>http://www.tuncatakan.com/vid/Love-Coding.mp4</video:content_loc>
+	<video:title>Love-Coding</video:title>
+	</video:video>
+</url>
+</urlset>
