@@ -2,17 +2,24 @@ name: Deploy HTML
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: self-hosted
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
-      run: rsync -a -v --delete-after --exclude=.github ./ /var/www/tuncatakan.com
-
+      - uses: actions/checkout@v2
+      - name: Stop pm2 server
+        run: pm2 stop tuncatakan.com
+      - name: Install Dependency
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: Copy files to nginx folder
+        run: rsync -a -v --delete-after --exclude=.github ./ /var/www/tuncatakan.com
+      - name: Production set
+        run: export NODE_ENV=production
+      - name: Restart PM2
+        run: pm2 restart tuncatakan.com
