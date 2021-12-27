@@ -1,0 +1,56 @@
+# Directories #
+_assets
+publish
+
+
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+nbproject
+Thumbs.db
+ehthumbs.db
+Icon
+phpstorm.php
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+intermediate
+publish
+.idea/
+files/
+thumbpic/
+imagecache/
+tmpfiles/
+ba_app/config/config.php
+ba_app/config/database.php
+cms/ba_app/config/config.php
+cms/ba_app/config/database.php
+cms/static/tinymce/plugins/moxiemanager/ci_session.php
+
+# build script local files
+build/buildinfo.properties
+build/config/buildinfo.properties
+build/config/.DS_Store
+
