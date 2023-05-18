@@ -19,7 +19,7 @@ jobs:
           yarn
           yarn build
       - name: Copy files to nginx folder
-        run: rsync -a -v --delete-after --exclude=.github ./ /var/www/tuncatakan.com
+        run: rsync -a -v --remove-source-files --delete-after --exclude=.github ./ /var/www/tuncatakan.com
       - name: Production set
         run: export NODE_ENV=production
       - name: Restart PM2
