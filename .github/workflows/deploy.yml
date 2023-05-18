@@ -11,16 +11,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - name: Stop pm2 server
-        run: pm2 stop tuncatakan.com
-      - name: Install Dependency && Build
-        working-directory: ./
-        run: |
-          yarn
-          yarn build
       - name: Copy files to nginx folder
         run: rsync -a -v --remove-source-files --delete-after --exclude=.github ./ /var/www/tuncatakan.com
-      - name: Production set
-        run: export NODE_ENV=production
-      - name: Restart PM2
-        run: pm2 restart tuncatakan.com
